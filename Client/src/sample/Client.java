@@ -1,11 +1,13 @@
+package sample;
+
 import java.net.*;
 import java.io.*;
 
 public class Client {
     public static void main(String[] ar) {
         int serverPort = 6666; // здесь обязательно нужно указать порт к которому привязывается сервер.
-        String address = "127.0.0.1"; // это IP-адрес компьютера, где исполняется наша серверная программа. 
-                                      // Здесь указан адрес того самого компьютера где будет исполняться и клиент.
+        String address = "127.0.0.1"; // это IP-адрес компьютера, где исполняется наша серверная программа.
+        // Здесь указан адрес того самого компьютера где будет исполняться и клиент.
 
         try {
             InetAddress ipAddress = InetAddress.getByName(address); // создаем объект который отображает вышеописанный IP-адрес.
@@ -13,7 +15,7 @@ public class Client {
             Socket socket = new Socket(ipAddress, serverPort); // создаем сокет используя IP-адрес и порт сервера.
             System.out.println("Yes! I just got hold of the program.");
 
-            // Берем входной и выходной потоки сокета, теперь можем получать и отсылать данные клиентом. 
+            // Берем входной и выходной потоки сокета, теперь можем получать и отсылать данные клиентом.
             InputStream sin = socket.getInputStream();
             OutputStream sout = socket.getOutputStream();
 
