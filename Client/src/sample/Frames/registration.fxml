@@ -25,18 +25,16 @@
     </rowConstraints>
    <children>
       <Label text="Имя:" />
-      <TextField GridPane.columnIndex="1" />
+      <TextField fx:id="registrationName" GridPane.columnIndex="1" />
       <Label text="Фамилия:" GridPane.rowIndex="1" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="registrationSurname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <Label text="Должность:" GridPane.rowIndex="2" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="registrationPosition" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <Label text="Логин:" GridPane.rowIndex="3" />
-      <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Пароль:" GridPane.rowIndex="4">
-
-      </Label>
-      <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button mnemonicParsing="false" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <TextField fx:id="registrationLogin" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Пароль:" GridPane.rowIndex="4"></Label>
+      <PasswordField fx:id="registrationPassword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button fx:id="okRegistrationData" mnemonicParsing="false" onAction="#getRegistrationData" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="5" />
    </children>
    <padding>
       <Insets left="120.0" top="40.0" />

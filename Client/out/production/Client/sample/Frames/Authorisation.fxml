@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane prefHeight="239.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.RegistrationController">
+<GridPane prefHeight="239.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.AuthorisationController">
     <columnConstraints>
         <ColumnConstraints />
         <ColumnConstraints />
@@ -25,10 +25,10 @@
     </rowConstraints>
     <children>
         <Label text="Логин:" />
-        <TextField GridPane.columnIndex="1" />
+        <TextField fx:id="authorisationLogin" GridPane.columnIndex="1" ></TextField>
         <Label text="Пароль:" GridPane.rowIndex="1" />
-        <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-        <Button mnemonicParsing="false" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <PasswordField fx:id="authorisationPassword" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <Button fx:id="OkAuthorisation" mnemonicParsing="false" onAction="#getAuthorisationData" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="3" />
     </children>
     <padding>
         <Insets left="120.0" top="40.0" />
