@@ -16,7 +16,7 @@
         <ColumnConstraints />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints />
+        <RowConstraints fillHeight="false" />
         <RowConstraints />
         <RowConstraints />
         <RowConstraints />
@@ -26,17 +26,48 @@
    <children>
       <Label text="Имя:" />
       <TextField fx:id="registrationName" GridPane.columnIndex="1" />
-      <Label text="Фамилия:" GridPane.rowIndex="1" />
-      <TextField fx:id="registrationSurname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Label text="Должность:" GridPane.rowIndex="2" />
-      <TextField fx:id="registrationPosition" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Label text="Логин:" GridPane.rowIndex="3" />
-      <TextField fx:id="registrationLogin" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Label text="Пароль:" GridPane.rowIndex="4"></Label>
-      <PasswordField fx:id="registrationPassword" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-      <Button fx:id="okRegistrationData" mnemonicParsing="false" onAction="#getRegistrationData" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Label text="Фамилия:" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="registrationSurname" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></TextField>
+      <Label text="Должность: " GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="registrationPosition" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></TextField>
+      <Label text="Логин:" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="registrationLogin" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></TextField>
+      <Label text="Пароль:" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Label>
+      <PasswordField fx:id="registrationPassword" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></PasswordField>
+      <Button fx:id="okRegistrationData" mnemonicParsing="false" onAction="#getRegistrationData" text="ОК" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin></Button>
+      <Button fx:id="backToHomepage" mnemonicParsing="false" onAction="#ToHomepage" text="Назад" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <GridPane.margin>
+            <Insets left="50.0" top="10.0" />
+         </GridPane.margin></Button>
    </children>
    <padding>
-      <Insets left="120.0" top="40.0" />
+      <Insets left="120.0" top="20.0" />
    </padding>
 </GridPane>

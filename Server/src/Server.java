@@ -20,16 +20,25 @@ public class Server {
          DataInputStream in = new DataInputStream(sin);
          DataOutputStream out = new DataOutputStream(sout);
 
-         String line = null;
-         while(true) {
-           line = in.readUTF(); // ожидаем пока клиент пришлет строку текста.
-           System.out.println("The dumb client just sent me this line : " + line);
-           System.out.println("I'm sending it back...");
-           out.writeUTF(line); // отсылаем клиенту обратно ту самую строку текста.
-           out.flush(); // заставляем поток закончить передачу данных.
-           System.out.println("Waiting for the next line...");
-           System.out.println();
+         String getIndex = null;
+         getIndex = in.readUTF();
+         int index = Integer.parseInt(getIndex);
+         switch (index){
+           case 1:{ //Authorisation
+               Authorisation authorisationData = new Authorisation();
+               authorisationData.getDataFromClient(in);
+               authorisationData.sendDataToClient(out);
+             break;
+           }
+           case 2:{ //registration
+               Registration registrationData = new Registration();
+               registrationData.getDataFromClient(in);
+               registrationData.sendDataToClient(out);
+             break;
+           }
          }
-      } catch(Exception x) { x.printStackTrace(); }
+
+
+       } catch(Exception x) { x.printStackTrace(); }
    }
 }
