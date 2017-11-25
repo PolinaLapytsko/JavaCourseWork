@@ -37,14 +37,14 @@ public class AuthorisationController {
             out.writeUTF(login); // отсылаем введенную строку текста серверу.
             out.writeUTF(password);
             out.flush(); // заставляем поток закончить передачу данных.
-            out.flush();
-            String line = in.readUTF(); // ждем пока сервер отошлет строку текста.
-            String line2 = in.readUTF();
-            System.out.println("login : " + line);
-            System.out.println("password : " + line2);
-            System.out.println("Looks like the server is pleased with us. Go ahead and enter more lines.");
-            System.out.println();
 
+            String line = in.readUTF(); // ждем пока сервер отошлет строку текста.
+
+            if (line.equals("OK"))
+                System.out.println("OK");
+            else
+                if(line.equals("ERROR"))
+                    System.out.println("ERROR");
         } catch (Exception x) {
             x.printStackTrace();
         }

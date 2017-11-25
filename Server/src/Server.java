@@ -26,8 +26,13 @@ public class Server {
          switch (index){
            case 1:{ //Authorisation
                Authorisation authorisationData = new Authorisation();
-               authorisationData.getDataFromClient(in);
-               authorisationData.sendDataToClient(out);
+              // authorisationData.getDataFromClient(in);
+               int flag = authorisationData.getDataFromClient(in);
+               if(flag == 2)
+                 authorisationData.sendDataToClient(out, "OK");
+               else
+                   if (flag == 1)
+                        authorisationData.sendDataToClient(out, "ERROR");
              break;
            }
            case 2:{ //registration

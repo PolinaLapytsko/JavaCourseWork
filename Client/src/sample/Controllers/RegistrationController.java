@@ -57,8 +57,6 @@ public class RegistrationController {
             {
                 ToHomepage(event);
             }
-
-
         } catch (Exception x) {
             x.printStackTrace();
         }
