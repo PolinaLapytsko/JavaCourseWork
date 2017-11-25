@@ -50,39 +50,18 @@ public class RegistrationController {
             out.writeUTF(password);
 
             out.flush(); // заставляем поток закончить передачу данных.
-            name = null;
-            surname = null;
-            position = null;
-            login = null;
-            password = null;
 
-            name = in.readUTF(); // ожидаем пока клиент пришлет строку текста.
-            surname = in.readUTF();
-            position = in.readUTF();
-            login = in.readUTF();
-            password = in.readUTF();
+            String submit = in.readUTF(); // ожидаем пока клиент пришлет строку текста.
 
-            System.out.println("name: " + name);
-            System.out.println("surname: " + surname);
-            System.out.println("position: " + position);
-            System.out.println("login: " + login);
-            System.out.println("password: " + password);
+            if (submit.equals("OK"))
+            {
+                ToHomepage(event);
+            }
 
-            System.out.println();
 
         } catch (Exception x) {
             x.printStackTrace();
         }
-        String regName = registrationName.getText();
-        String regSurname = registrationSurname.getText();
-        String regPosition = registrationPosition.getText();
-        String regLogin = registrationLogin.getText();
-        String regPassword = registrationPassword.getText();
-        System.out.println(regName);
-        System.out.println(regSurname);
-        System.out.println(regPosition);
-        System.out.println(regLogin);
-        System.out.println(regPassword);
     }
 
     @FXML
