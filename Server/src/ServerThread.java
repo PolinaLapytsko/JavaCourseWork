@@ -53,6 +53,64 @@ class ServerThread extends Thread {
                     object.getAuthorisationData(in, out, conn);
                     out.flush();
                 }
+                else
+                    if (flag.equals("Registration")){
+                       // System.out.println("Reg OK");
+                        Registration object = new Registration();
+                        object.getRegistrationData(in, out, conn);
+                        out.flush();
+                    }
+                    else
+                        if (flag.equals("UserList")){
+                          // System.out.println("UserList");
+                            UserList list = new UserList();
+                            list.getListFromDB(in, out, conn);
+                        }
+                        else
+                            if (flag.equals("UserSalaryList")){
+                                UserSalaryList SalaryList = new UserSalaryList();
+                                SalaryList.getListFromDB(in, out, conn);
+                            }
+                            else
+                                if(flag.equals("Count"))
+                                {
+                                    String index = in.readUTF();
+                                    DBSalarySet dbSalarySet = new DBSalarySet();
+                                    //System.out.println(index);
+                                    String kindOfSalary = in.readUTF();
+                                    if (kindOfSalary.equals("SimpleTimeSalary")){
+                                        SimpleTime simpleTime = new SimpleTime();
+                                        dbSalarySet.setInDB(simpleTime.countSalary(in, conn), index, conn);
+                                        out.writeUTF("ok");
+                                    } else
+                                        if (kindOfSalary.equals("SimpleTimePrizeSalary")){
+                                            SimpleTimePrize simpleTimePrize = new SimpleTimePrize();
+                                            dbSalarySet.setInDB(simpleTimePrize.countSalary(in, conn), index, conn);
+                                            out.writeUTF("ok");
+                                        } else
+                                    if (kindOfSalary.equals("Salary")){
+                                            Salary salary = new Salary();
+                                            dbSalarySet.setInDB(salary.countSalary(in, conn), index, conn);
+                                            out.writeUTF("ok");
+                                    } else
+                                    if (kindOfSalary.equals("DirectPiecework")){
+                                        DirectPiecework directPiecework = new DirectPiecework();
+                                        dbSalarySet.setInDB(directPiecework.countSalary(in), index, conn);
+                                        out.writeUTF("ok");
+                                    } else
+                                    if (kindOfSalary.equals("PieceworkPrize")){
+                                            PieceworkPrize pieceworkPrize = new PieceworkPrize();
+                                            dbSalarySet.setInDB(pieceworkPrize.countSalary(in), index, conn);
+                                            out.writeUTF("ok");
+                                    } else
+                                        if (kindOfSalary.equals("PieceworkProg")){
+                                            PieceworkProg pieceworkProg = new PieceworkProg();
+                                            dbSalarySet.setInDB(pieceworkProg.countSalary(in), index, conn);
+                                            out.writeUTF("ok");
+                                        }
+                                }
+
+
             }
         }catch (IOException e) {
             //System.err.println(e);

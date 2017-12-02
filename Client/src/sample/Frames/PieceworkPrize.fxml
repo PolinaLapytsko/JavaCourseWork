@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="239.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.PieceworkPrizeController">
+    <children>
+        <Label layoutX="152.0" layoutY="14.0" text="Заполните форму">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="53.0" text="Количество произведенной продукции:" />
+        <TextField fx:id="Product" layoutX="14.0" layoutY="77.0" prefHeight="25.0" prefWidth="221.0" />
+        <TextField fx:id="PieceRate" layoutX="14.0" layoutY="135.0" prefHeight="25.0" prefWidth="221.0" />
+        <Label layoutX="14.0" layoutY="111.0" text="Сдельная расценка:" />
+        <Button fx:id="ConfirmPieceworkPrize" layoutX="34.0" layoutY="200.0" mnemonicParsing="false" onAction="#getData" prefHeight="25.0" prefWidth="55.0" text="ОК" />
+      <TextField fx:id="PlanPrize" layoutX="265.0" layoutY="77.0" prefHeight="25.0" prefWidth="172.0" />
+      <TextField fx:id="Prize" layoutX="265.0" layoutY="135.0" prefHeight="25.0" prefWidth="172.0" />
+      <TextField fx:id="Plan" layoutX="265.0" layoutY="188.0" prefHeight="25.0" prefWidth="172.0" />
+      <Label layoutX="265.0" layoutY="53.0" text="\% премии за план:" />
+      <Label layoutX="265.0" layoutY="111.0" text="\% премии за перевыполнение:" />
+      <Label layoutX="265.0" layoutY="171.0" text="\% перевыполнения:" />
+    </children>
+</AnchorPane>
